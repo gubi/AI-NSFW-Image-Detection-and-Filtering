@@ -1,4 +1,5 @@
-ultralytics
 flask
-waitress
 pillow
+supervision
+ultralytics
+waitress

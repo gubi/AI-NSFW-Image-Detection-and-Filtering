@@ -1,0 +1,947 @@
+[
+    {
+        "x_min": 595.4122314453125,
+        "y_min": 0.0,
+        "x_max": 1381.5738525390625,
+        "y_max": 666.76171875,
+        "class_id": 3,
+        "confidence": 0.3246684968471527,
+        "tracker_id": "",
+        "class_name": "penis",
+        "filename": "1701979302809986.jpg",
+        "detections": {
+            "count": 1,
+            "items": "['penis']"
+        }
+    },
+    {
+        "x_min": 339.6612854003906,
+        "y_min": 24.742717742919922,
+        "x_max": 1838.9061279296875,
+        "y_max": 1117.0050048828125,
+        "class_id": 4,
+        "confidence": 0.6595786809921265,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1718904273290232.png",
+        "detections": {
+            "count": 1,
+            "items": "['vagina']"
+        }
+    },
+    {
+        "x_min": 553.4507446289062,
+        "y_min": 1484.25,
+        "x_max": 1851.643798828125,
+        "y_max": 2980.425048828125,
+        "class_id": 3,
+        "confidence": 0.48586392402648926,
+        "tracker_id": "",
+        "class_name": "penis",
+        "filename": "1721751848855669.jpg",
+        "detections": {
+            "count": 4,
+            "items": "['penis' 'make_love' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 0.0,
+        "y_min": 1.4980753660202026,
+        "x_max": 2635.866943359375,
+        "y_max": 3735.224365234375,
+        "class_id": 1,
+        "confidence": 0.2842352092266083,
+        "tracker_id": "",
+        "class_name": "make_love",
+        "filename": "1721751848855669.jpg",
+        "detections": {
+            "count": 4,
+            "items": "['penis' 'make_love' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 1612.434326171875,
+        "y_min": 169.03060913085938,
+        "x_max": 1884.712646484375,
+        "y_max": 508.6803894042969,
+        "class_id": 2,
+        "confidence": 0.27998626232147217,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1721751848855669.jpg",
+        "detections": {
+            "count": 4,
+            "items": "['penis' 'make_love' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 611.04443359375,
+        "y_min": 20.732324600219727,
+        "x_max": 1068.4298095703125,
+        "y_max": 572.1363525390625,
+        "class_id": 2,
+        "confidence": 0.23908011615276337,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1721751848855669.jpg",
+        "detections": {
+            "count": 4,
+            "items": "['penis' 'make_love' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 671.3184204101562,
+        "y_min": 1673.1363525390625,
+        "x_max": 1548.1829833984375,
+        "y_max": 2566.670166015625,
+        "class_id": 0,
+        "confidence": 0.3536277413368225,
+        "tracker_id": "",
+        "class_name": "anus",
+        "filename": "1721834681148922.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['anus' 'vagina']"
+        }
+    },
+    {
+        "x_min": 595.2722778320312,
+        "y_min": 2149.777587890625,
+        "x_max": 1564.7039794921875,
+        "y_max": 2863.443359375,
+        "class_id": 4,
+        "confidence": 0.2279374599456787,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1721834681148922.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['anus' 'vagina']"
+        }
+    },
+    {
+        "x_min": 340.8763732910156,
+        "y_min": 716.6170654296875,
+        "x_max": 575.0081787109375,
+        "y_max": 1010.2440185546875,
+        "class_id": 2,
+        "confidence": 0.5489228367805481,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1721985313295768.jpg",
+        "detections": {
+            "count": 3,
+            "items": "['nipple' 'nipple' 'penis']"
+        }
+    },
+    {
+        "x_min": 94.24188232421875,
+        "y_min": 690.4318237304688,
+        "x_max": 304.8314514160156,
+        "y_max": 959.3560791015625,
+        "class_id": 2,
+        "confidence": 0.4644879102706909,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1721985313295768.jpg",
+        "detections": {
+            "count": 3,
+            "items": "['nipple' 'nipple' 'penis']"
+        }
+    },
+    {
+        "x_min": 0.0,
+        "y_min": 7.559423923492432,
+        "x_max": 337.71966552734375,
+        "y_max": 572.4654541015625,
+        "class_id": 3,
+        "confidence": 0.3708540201187134,
+        "tracker_id": "",
+        "class_name": "penis",
+        "filename": "1721985313295768.jpg",
+        "detections": {
+            "count": 3,
+            "items": "['nipple' 'nipple' 'penis']"
+        }
+    },
+    {
+        "x_min": 239.91795349121094,
+        "y_min": 522.7526245117188,
+        "x_max": 418.79052734375,
+        "y_max": 672.9296875,
+        "class_id": 4,
+        "confidence": 0.325907826423645,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1722985818194150.png",
+        "detections": {
+            "count": 2,
+            "items": "['vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 283.1529846191406,
+        "y_min": 327.67730712890625,
+        "x_max": 360.20745849609375,
+        "y_max": 405.3038330078125,
+        "class_id": 2,
+        "confidence": 0.28931811451911926,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1722985818194150.png",
+        "detections": {
+            "count": 2,
+            "items": "['vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 647.7280883789062,
+        "y_min": 1103.191162109375,
+        "x_max": 1915.3685302734375,
+        "y_max": 1938.655029296875,
+        "class_id": 4,
+        "confidence": 0.5659597516059875,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1723399110043132.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['vagina' 'anus']"
+        }
+    },
+    {
+        "x_min": 870.0457763671875,
+        "y_min": 1796.2728271484375,
+        "x_max": 1606.5909423828125,
+        "y_max": 2152.7587890625,
+        "class_id": 0,
+        "confidence": 0.36889010667800903,
+        "tracker_id": "",
+        "class_name": "anus",
+        "filename": "1723399110043132.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['vagina' 'anus']"
+        }
+    },
+    {
+        "x_min": 0.8958740234375,
+        "y_min": 0.0,
+        "x_max": 1280.0,
+        "y_max": 720.0,
+        "class_id": 1,
+        "confidence": 0.7657373547554016,
+        "tracker_id": "",
+        "class_name": "make_love",
+        "filename": "1723519466751102.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['make_love' 'penis' 'nipple' 'penis' 'penis']"
+        }
+    },
+    {
+        "x_min": 856.7894287109375,
+        "y_min": 88.87738037109375,
+        "x_max": 1212.3199462890625,
+        "y_max": 420.2576904296875,
+        "class_id": 3,
+        "confidence": 0.33297327160835266,
+        "tracker_id": "",
+        "class_name": "penis",
+        "filename": "1723519466751102.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['make_love' 'penis' 'nipple' 'penis' 'penis']"
+        }
+    },
+    {
+        "x_min": 767.1010131835938,
+        "y_min": 383.77947998046875,
+        "x_max": 862.9235229492188,
+        "y_max": 460.39996337890625,
+        "class_id": 2,
+        "confidence": 0.26273074746131897,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1723519466751102.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['make_love' 'penis' 'nipple' 'penis' 'penis']"
+        }
+    },
+    {
+        "x_min": 264.426025390625,
+        "y_min": 418.73675537109375,
+        "x_max": 485.42626953125,
+        "y_max": 625.0138549804688,
+        "class_id": 3,
+        "confidence": 0.26261037588119507,
+        "tracker_id": "",
+        "class_name": "penis",
+        "filename": "1723519466751102.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['make_love' 'penis' 'nipple' 'penis' 'penis']"
+        }
+    },
+    {
+        "x_min": 174.33319091796875,
+        "y_min": 235.276611328125,
+        "x_max": 530.5309448242188,
+        "y_max": 542.3221435546875,
+        "class_id": 3,
+        "confidence": 0.22852681577205658,
+        "tracker_id": "",
+        "class_name": "penis",
+        "filename": "1723519466751102.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['make_love' 'penis' 'nipple' 'penis' 'penis']"
+        }
+    },
+    {
+        "x_min": 377.63446044921875,
+        "y_min": 1361.0113525390625,
+        "x_max": 827.4552001953125,
+        "y_max": 1820.20703125,
+        "class_id": 4,
+        "confidence": 0.3500515818595886,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1724554844212123.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 398.8671875,
+        "y_min": 953.603515625,
+        "x_max": 588.7073974609375,
+        "y_max": 1211.544189453125,
+        "class_id": 2,
+        "confidence": 0.2598298490047455,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724554844212123.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 176.14151000976562,
+        "y_min": 260.4877014160156,
+        "x_max": 352.75555419921875,
+        "y_max": 390.5028991699219,
+        "class_id": 2,
+        "confidence": 0.24024489521980286,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724579240484244.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 447.4671325683594,
+        "y_min": 202.34031677246094,
+        "x_max": 700.7186279296875,
+        "y_max": 374.16162109375,
+        "class_id": 2,
+        "confidence": 0.23487643897533417,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724579240484244.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 2.617084264755249,
+        "y_min": 0.0,
+        "x_max": 1718.3465576171875,
+        "y_max": 1172.0,
+        "class_id": 1,
+        "confidence": 0.4693000018596649,
+        "tracker_id": "",
+        "class_name": "make_love",
+        "filename": "1724642947452792.png",
+        "detections": {
+            "count": 2,
+            "items": "['make_love' 'nipple']"
+        }
+    },
+    {
+        "x_min": 1136.2540283203125,
+        "y_min": 723.5081787109375,
+        "x_max": 1270.3375244140625,
+        "y_max": 863.51025390625,
+        "class_id": 2,
+        "confidence": 0.37465259432792664,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724642947452792.png",
+        "detections": {
+            "count": 2,
+            "items": "['make_love' 'nipple']"
+        }
+    },
+    {
+        "x_min": 1177.1173095703125,
+        "y_min": 502.9645690917969,
+        "x_max": 1301.1937255859375,
+        "y_max": 647.8720092773438,
+        "class_id": 2,
+        "confidence": 0.4374270737171173,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724712668295029.png",
+        "detections": {
+            "count": 8,
+            "items": "['nipple' 'nipple' 'nipple' 'make_love' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 756.84375,
+        "y_min": 495.1477966308594,
+        "x_max": 887.46923828125,
+        "y_max": 646.8804931640625,
+        "class_id": 2,
+        "confidence": 0.3769737184047699,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724712668295029.png",
+        "detections": {
+            "count": 8,
+            "items": "['nipple' 'nipple' 'nipple' 'make_love' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 492.9953918457031,
+        "y_min": 498.8959045410156,
+        "x_max": 635.0698852539062,
+        "y_max": 657.8480224609375,
+        "class_id": 2,
+        "confidence": 0.3585720956325531,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724712668295029.png",
+        "detections": {
+            "count": 8,
+            "items": "['nipple' 'nipple' 'nipple' 'make_love' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 0.0,
+        "y_min": 0.0,
+        "x_max": 1405.0,
+        "y_max": 1054.0,
+        "class_id": 1,
+        "confidence": 0.31136566400527954,
+        "tracker_id": "",
+        "class_name": "make_love",
+        "filename": "1724712668295029.png",
+        "detections": {
+            "count": 8,
+            "items": "['nipple' 'nipple' 'nipple' 'make_love' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 952.650634765625,
+        "y_min": 503.61358642578125,
+        "x_max": 1049.0135498046875,
+        "y_max": 622.8323974609375,
+        "class_id": 2,
+        "confidence": 0.2748371958732605,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724712668295029.png",
+        "detections": {
+            "count": 8,
+            "items": "['nipple' 'nipple' 'nipple' 'make_love' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 1230.10009765625,
+        "y_min": 405.16119384765625,
+        "x_max": 1343.3055419921875,
+        "y_max": 562.0543212890625,
+        "class_id": 2,
+        "confidence": 0.2501925230026245,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724712668295029.png",
+        "detections": {
+            "count": 8,
+            "items": "['nipple' 'nipple' 'nipple' 'make_love' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 953.0066528320312,
+        "y_min": 397.2120361328125,
+        "x_max": 1078.0455322265625,
+        "y_max": 549.7224731445312,
+        "class_id": 2,
+        "confidence": 0.23667031526565552,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724712668295029.png",
+        "detections": {
+            "count": 8,
+            "items": "['nipple' 'nipple' 'nipple' 'make_love' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 67.57981872558594,
+        "y_min": 484.1883239746094,
+        "x_max": 215.78775024414062,
+        "y_max": 670.1871337890625,
+        "class_id": 2,
+        "confidence": 0.23459406197071075,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724712668295029.png",
+        "detections": {
+            "count": 8,
+            "items": "['nipple' 'nipple' 'nipple' 'make_love' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 401.72802734375,
+        "y_min": 964.3602294921875,
+        "x_max": 635.5523681640625,
+        "y_max": 1224.527099609375,
+        "class_id": 2,
+        "confidence": 0.45872387290000916,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724723747204379.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['nipple' 'nipple' 'vagina' 'anus' 'make_love']"
+        }
+    },
+    {
+        "x_min": 738.5216674804688,
+        "y_min": 945.6343994140625,
+        "x_max": 957.4484252929688,
+        "y_max": 1183.3304443359375,
+        "class_id": 2,
+        "confidence": 0.3946540951728821,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724723747204379.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['nipple' 'nipple' 'vagina' 'anus' 'make_love']"
+        }
+    },
+    {
+        "x_min": 519.7033081054688,
+        "y_min": 1232.0614013671875,
+        "x_max": 980.7401733398438,
+        "y_max": 1673.174072265625,
+        "class_id": 4,
+        "confidence": 0.37839198112487793,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1724723747204379.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['nipple' 'nipple' 'vagina' 'anus' 'make_love']"
+        }
+    },
+    {
+        "x_min": 676.604736328125,
+        "y_min": 1549.5994873046875,
+        "x_max": 940.38916015625,
+        "y_max": 1776.4141845703125,
+        "class_id": 0,
+        "confidence": 0.3079403042793274,
+        "tracker_id": "",
+        "class_name": "anus",
+        "filename": "1724723747204379.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['nipple' 'nipple' 'vagina' 'anus' 'make_love']"
+        }
+    },
+    {
+        "x_min": 0.0,
+        "y_min": 0.8651465773582458,
+        "x_max": 1280.0,
+        "y_max": 1809.9188232421875,
+        "class_id": 1,
+        "confidence": 0.214275062084198,
+        "tracker_id": "",
+        "class_name": "make_love",
+        "filename": "1724723747204379.jpg",
+        "detections": {
+            "count": 5,
+            "items": "['nipple' 'nipple' 'vagina' 'anus' 'make_love']"
+        }
+    },
+    {
+        "x_min": 913.088623046875,
+        "y_min": 1651.901123046875,
+        "x_max": 1640.3961181640625,
+        "y_max": 2201.144775390625,
+        "class_id": 4,
+        "confidence": 0.7295805811882019,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1724897142625564.jpg",
+        "detections": {
+            "count": 6,
+            "items": "['vagina' 'vagina' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 35.44495391845703,
+        "y_min": 1721.5633544921875,
+        "x_max": 720.63330078125,
+        "y_max": 2228.887939453125,
+        "class_id": 4,
+        "confidence": 0.5717166066169739,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1724897142625564.jpg",
+        "detections": {
+            "count": 6,
+            "items": "['vagina' 'vagina' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 592.171630859375,
+        "y_min": 1163.7685546875,
+        "x_max": 785.5238037109375,
+        "y_max": 1357.6917724609375,
+        "class_id": 2,
+        "confidence": 0.4544757604598999,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724897142625564.jpg",
+        "detections": {
+            "count": 6,
+            "items": "['vagina' 'vagina' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 90.5122299194336,
+        "y_min": 1150.6785888671875,
+        "x_max": 272.7774963378906,
+        "y_max": 1340.3553466796875,
+        "class_id": 2,
+        "confidence": 0.4050947427749634,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724897142625564.jpg",
+        "detections": {
+            "count": 6,
+            "items": "['vagina' 'vagina' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 1538.934814453125,
+        "y_min": 893.735107421875,
+        "x_max": 1752.8441162109375,
+        "y_max": 1154.4039306640625,
+        "class_id": 2,
+        "confidence": 0.3670778274536133,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724897142625564.jpg",
+        "detections": {
+            "count": 6,
+            "items": "['vagina' 'vagina' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 922.78955078125,
+        "y_min": 893.7342529296875,
+        "x_max": 1166.168701171875,
+        "y_max": 1111.638427734375,
+        "class_id": 2,
+        "confidence": 0.21599672734737396,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1724897142625564.jpg",
+        "detections": {
+            "count": 6,
+            "items": "['vagina' 'vagina' 'nipple' 'nipple' 'nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 101.11174011230469,
+        "y_min": 76.9765853881836,
+        "x_max": 326.31378173828125,
+        "y_max": 331.24029541015625,
+        "class_id": 0,
+        "confidence": 0.43542125821113586,
+        "tracker_id": "",
+        "class_name": "anus",
+        "filename": "1724905864533025.jpg",
+        "detections": {
+            "count": 1,
+            "items": "['anus']"
+        }
+    },
+    {
+        "x_min": 0.0,
+        "y_min": 0.9637355804443359,
+        "x_max": 114.97795867919922,
+        "y_max": 248.31753540039062,
+        "class_id": 4,
+        "confidence": 0.9242989420890808,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1725093323532977s.jpg",
+        "detections": {
+            "count": 1,
+            "items": "['vagina']"
+        }
+    },
+    {
+        "x_min": 462.3653869628906,
+        "y_min": 393.4141540527344,
+        "x_max": 637.5863037109375,
+        "y_max": 563.8526611328125,
+        "class_id": 2,
+        "confidence": 0.31065258383750916,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1726477586651921.jpg",
+        "detections": {
+            "count": 1,
+            "items": "['nipple']"
+        }
+    },
+    {
+        "x_min": 544.0060424804688,
+        "y_min": 493.03118896484375,
+        "x_max": 686.4602661132812,
+        "y_max": 629.5755004882812,
+        "class_id": 2,
+        "confidence": 0.21496392786502838,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1726963008207714.jpg",
+        "detections": {
+            "count": 1,
+            "items": "['nipple']"
+        }
+    },
+    {
+        "x_min": 752.717529296875,
+        "y_min": 620.1778564453125,
+        "x_max": 977.2548828125,
+        "y_max": 911.0704345703125,
+        "class_id": 2,
+        "confidence": 0.5861040949821472,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1727971007198851.jpg",
+        "detections": {
+            "count": 3,
+            "items": "['nipple' 'vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 344.20654296875,
+        "y_min": 982.22509765625,
+        "x_max": 905.3056030273438,
+        "y_max": 1531.0635986328125,
+        "class_id": 4,
+        "confidence": 0.5436188578605652,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1727971007198851.jpg",
+        "detections": {
+            "count": 3,
+            "items": "['nipple' 'vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 529.7314453125,
+        "y_min": 572.4121704101562,
+        "x_max": 731.6846313476562,
+        "y_max": 841.2350463867188,
+        "class_id": 2,
+        "confidence": 0.4835202991962433,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1727971007198851.jpg",
+        "detections": {
+            "count": 3,
+            "items": "['nipple' 'vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 222.89498901367188,
+        "y_min": 957.6659545898438,
+        "x_max": 655.989990234375,
+        "y_max": 1443.1099853515625,
+        "class_id": 2,
+        "confidence": 0.3706345856189728,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1727979723469241.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 778.903564453125,
+        "y_min": 967.3619384765625,
+        "x_max": 1234.4600830078125,
+        "y_max": 1478.3968505859375,
+        "class_id": 2,
+        "confidence": 0.35503697395324707,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1727979723469241.jpg",
+        "detections": {
+            "count": 2,
+            "items": "['nipple' 'nipple']"
+        }
+    },
+    {
+        "x_min": 1138.8963623046875,
+        "y_min": 925.2742919921875,
+        "x_max": 1381.8165283203125,
+        "y_max": 1154.9791259765625,
+        "class_id": 2,
+        "confidence": 0.3016497492790222,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1728061152737184.png",
+        "detections": {
+            "count": 1,
+            "items": "['nipple']"
+        }
+    },
+    {
+        "x_min": 812.5523071289062,
+        "y_min": 599.34912109375,
+        "x_max": 1042.627685546875,
+        "y_max": 863.1741943359375,
+        "class_id": 2,
+        "confidence": 0.37531083822250366,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1728480134770843.png",
+        "detections": {
+            "count": 3,
+            "items": "['nipple' 'vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 291.3415222167969,
+        "y_min": 974.3189697265625,
+        "x_max": 875.3492431640625,
+        "y_max": 1524.755126953125,
+        "class_id": 4,
+        "confidence": 0.3267975151538849,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1728480134770843.png",
+        "detections": {
+            "count": 3,
+            "items": "['nipple' 'vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 450.1362609863281,
+        "y_min": 602.49462890625,
+        "x_max": 672.7169799804688,
+        "y_max": 850.298583984375,
+        "class_id": 2,
+        "confidence": 0.2800891697406769,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1728480134770843.png",
+        "detections": {
+            "count": 3,
+            "items": "['nipple' 'vagina' 'nipple']"
+        }
+    },
+    {
+        "x_min": 548.595947265625,
+        "y_min": 1138.2098388671875,
+        "x_max": 926.5155029296875,
+        "y_max": 1518.8668212890625,
+        "class_id": 2,
+        "confidence": 0.5165897011756897,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1729424628775413.jpg",
+        "detections": {
+            "count": 4,
+            "items": "['nipple' 'nipple' 'anus' 'vagina']"
+        }
+    },
+    {
+        "x_min": 1134.6566162109375,
+        "y_min": 1203.391357421875,
+        "x_max": 1524.735107421875,
+        "y_max": 1579.099365234375,
+        "class_id": 2,
+        "confidence": 0.5011036992073059,
+        "tracker_id": "",
+        "class_name": "nipple",
+        "filename": "1729424628775413.jpg",
+        "detections": {
+            "count": 4,
+            "items": "['nipple' 'nipple' 'anus' 'vagina']"
+        }
+    },
+    {
+        "x_min": 412.2122497558594,
+        "y_min": 2000.1893310546875,
+        "x_max": 1062.3011474609375,
+        "y_max": 2452.0,
+        "class_id": 0,
+        "confidence": 0.3528006374835968,
+        "tracker_id": "",
+        "class_name": "anus",
+        "filename": "1729424628775413.jpg",
+        "detections": {
+            "count": 4,
+            "items": "['nipple' 'nipple' 'anus' 'vagina']"
+        }
+    },
+    {
+        "x_min": 352.20220947265625,
+        "y_min": 1486.578125,
+        "x_max": 1254.4638671875,
+        "y_max": 2194.864990234375,
+        "class_id": 4,
+        "confidence": 0.30748918652534485,
+        "tracker_id": "",
+        "class_name": "vagina",
+        "filename": "1729424628775413.jpg",
+        "detections": {
+            "count": 4,
+            "items": "['nipple' 'nipple' 'anus' 'vagina']"
+        }
+    },
+    {
+        "x_min": 854.5986938476562,
+        "y_min": 1165.716552734375,
+        "x_max": 1371.60107421875,
+        "y_max": 1736.7176513671875,
+        "class_id": 0,
+        "confidence": 0.3562341034412384,
+        "tracker_id": "",
+        "class_name": "anus",
+        "filename": "1729868006558863.jpg",
+        "detections": {
+            "count": 1,
+            "items": "['anus']"
+        }
+    }
+]

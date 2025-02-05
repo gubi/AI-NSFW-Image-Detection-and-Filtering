@@ -2,4 +2,4 @@
 
 .cache/
 
-test4.py
+test*.py
