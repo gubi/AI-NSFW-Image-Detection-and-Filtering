@@ -31,7 +31,7 @@ ___
   Do face detection and age and gender classification on pictures
 * [Papers and Codes](https://paperswithcode.com/task/pornography-detection)<br>
   The mission of Papers with Code is to create a free and open resource with Machine Learning papers, code, datasets, methods and evaluation tables
-* [NSFWJS](https://github.com/infinitered/nsfwjs)
+* [NSFWJS](https://github.com/infinitered/nsfwjs)<br>
   NSFW detection on the client-side via TensorFlow.js - Client-side indecent content checking
 * [Yahoo OpenNSFW](https://github.com/yahoo/open_nsfw)<br>
   Not Suitable for Work (NSFW) classification using deep neural network Caffe models
