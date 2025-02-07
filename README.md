@@ -1,6 +1,9 @@
 # NSFW Image Detection and Filtering
 Detect image adult content and apply censorship 
 
+&nbsp;
+&nbsp;
+
 ## Requirements
 Main<br>
 `$ pip install -r requirements.txt`
@@ -8,18 +11,31 @@ Main<br>
 Torch<br>
 `!pip install torch torchvision torchaudio --index-url https://download.pytorch.org/index.html`
 
-## NSFW Image detection and filtering
+PyPI<br>
+`pip install pyvips-binary pyvips`<br>
+@see also https://pypi.org/project/pyvips/
 
-Check these paths:
-* Source path: `training_samples/selected/`
-* Output path: `training_samples/nsfw_recognized/`
+&nbsp;
 
-Launch the filter:
+## Execution
+> #### Keep in mind these folders
+> * Source path: `training_samples/selected/`
+> * NSFW filtered images path: `training_samples/nsfw_recognized/`
+
+
+&nbsp;
+
+### Launch the filter
 `$ python3 nsfw_filter.py`
+
+### Execute the image detector
+`$ python3 image_detector`
+
+&nbsp;
 
 ___
 
-### Main resources:
+#### Main resources:
 * [YOLO v11](https://docs.ultralytics.com/it/models/yolo11/)<br>
   Useful for documentation and pre-trained models
 * [HuggingFace - erax-ai/EraX-Anti-NSFW-V1.1](https://huggingface.co/erax-ai/EraX-Anti-NSFW-V1.1?not-for-all-audiences=true)<br>
@@ -27,7 +43,7 @@ ___
 * [🌔 moondream](https://github.com/vikhyat/moondream)<br>
   An AI script for describe image contents
 
-### Other resources:
+#### Other resources:
 * [Sexy YOLO](https://github.com/algernonx/SexyYolo)<br>
   A hierarchical detection method based on Yolov3, which can work on joint classification and detection dataset, such as COCO and NSFW. So that Yolo could detect coco categories and sexy or porn person simultaneously. (Tensorflow 1.x)
 * [Rude Carnie: Age and Gender Deep Learning with TensorFlow](https://github.com/dpressel/rude-carnie)<br>
