@@ -5,5 +5,7 @@ pyvips
 pyvips-binary
 supervision
 torch
+torchvision
+torchaudio
 ultralytics
 waitress
