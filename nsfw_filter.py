@@ -20,8 +20,6 @@ import torch
 
 IOU_THRESHOLD        = 0.3
 CONFIDENCE_THRESHOLD = 0.1
-# Key Name: cosmic-bear-616
-MOONDREAM_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlfaWQiOiJkZDkyM2U2Mi1iZmE4LTRhMzUtYmFmYS02MjM4NmQ0ZTAwNTIiLCJpYXQiOjE3Mzg5MDA3MTF9.TzMA1xBoGpUthKdU8tQuIrfOpAvOR_SMIB2Sb_oUVcs"
 
 drive_prefix = "drive/MyDrive/Colab Notebooks/"
 
