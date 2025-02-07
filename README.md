@@ -4,13 +4,13 @@ Detect image adult content and apply censorship
 &nbsp;
 &nbsp;
 
-## Requirements
+### Install requirements
 Main<br>
 `$ pip install -r requirements.txt`
 
 &nbsp;
 
-## Execution
+### Execution
 > #### Keep in mind these folders
 > * Source path: `training_samples/selected/`
 > * NSFW filtered images path: `training_samples/nsfw_recognized/`
