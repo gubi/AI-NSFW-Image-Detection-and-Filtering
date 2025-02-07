@@ -1,5 +1,9 @@
 flask
+moondream
 pillow
+pyvips
+pyvips-binary
 supervision
+torch
 ultralytics
 waitress
