@@ -24,7 +24,16 @@ IOU_THRESHOLD        = 0.3
 CONFIDENCE_THRESHOLD = 0.1
 # Key Name: cosmic-bear-616
 MOONDREAM_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlfaWQiOiJkZDkyM2U2Mi1iZmE4LTRhMzUtYmFmYS02MjM4NmQ0ZTAwNTIiLCJpYXQiOjE3Mzg5MDA3MTF9.TzMA1xBoGpUthKdU8tQuIrfOpAvOR_SMIB2Sb_oUVcs"
+moondream_query = """
+Give me a brief description of this image, and a detailed comma-separated list of unique objects visible in this image, no general terms.
+Output JSON object with keys:
+- 'subject': (string) An objective description of the subject in the image in 50 characters
+- 'short': (string) a short subtitle label for image in 10 words
+- 'long': (string) a discursive, long detailed description on image content, 250 characters
+- 'tags': (array) a list of univocal and not repeated 1 to 6 snake_case tags
+"""
 
+# Set to "./" for local execution
 drive_prefix = "drive/MyDrive/Colab Notebooks/"
 
 yolo_pretrained_pt = drive_prefix + "pretrains/yolo11m.pt"
@@ -34,7 +43,7 @@ nsfw_pretrained_pt = drive_prefix + "pretrains/erax_nsfw_yolo11m.pt"
 visionx_pretrained_pt = drive_prefix + "pretrains/visionx.pt"
 
 source_path = drive_prefix + "training_samples/selected"
-source_path_single_not_sex = drive_prefix + "training_samples/selected/1698797738754547.jpg"
+source_path_single_not_sex = drive_prefix + "training_samples/selected/1723652428084736.jpg"
 source_2_paths = [
     drive_prefix + "training_samples/selected/1722985818194150.png",
     drive_prefix + "training_samples/selected/1724897142625564.jpg"
@@ -46,6 +55,7 @@ source_4_paths = [
     drive_prefix + "training_samples/selected/1721751848855669.jpg"
 ]
 recognized_path = drive_prefix + "training_samples/nsfw_recognized/"
+test_path =  drive_prefix + "training_samples/test/"
 
 # NSFW image filtering script
 # --------------------------------------------------------------------------
@@ -109,14 +119,6 @@ filter_nsfw(nsfw_pretrained_pt, source_path)
 # Get image description function
 # --------------------------------------------------------------------------
 moondream_model = md.vl(api_key=MOONDREAM_API_KEY)
-moondream_query = """
-Give me a brief description of this image, and a detailed comma-separated list of unique objects visible in this image, no general terms.
-Output JSON object with keys:
-- 'subject': (string) An objective description of the subject in the image in 50 characters
-- 'short': (string) a short description for image label (max 25 words)
-- 'long': (string) a long description, max 250 characters
-- 'tags': (array) a list of univocal and not repeated 6 tags
-"""
 
 # Generate an AI image description
 ## @params <string>                 img                   The image to process
@@ -124,27 +126,27 @@ def get_image_description(img):
     image = Image.open(img)
     #encoded_image = moondream_model.encode_image(image)
     description = {}
-    
+
     try:
         answer = moondream_model.query(image, moondream_query)["answer"]
         description = json.loads(answer)
     except json.JSONDecodeError as e:
-        print(f"Error decoding JSON: {e}, response: {answer}")
+        #print(f"Error decoding JSON: {e}, response: {answer}")
         description = {  # provide default values if JSON decode fails
-            "subject": None,
-            "short": None,
-            "long": None,
+            "subject": "",
+            "short": "",
+            "long": "",
             "tags": []
         }
     except Exception as e:
-        print(f"An unexpected error occurred: {e}")
+        #print(f"An unexpected error occurred: {e}")
         description = {  # provide default values if any other error occurs
-            "subject": None,
-            "short": None,
-            "long": None,
+            "subject": "",
+            "short": "",
+            "long": "",
             "tags": []
         }
-    
+
     description = {
         "subject": description.get("subject"),
         "short": description.get("short"),
@@ -152,6 +154,85 @@ def get_image_description(img):
         "tags": list(set(description.get("tags")))
     }
     return description
+
+
+# Gender and Age Detection program by Mahesh Sawant
+# source: https://github.com/smahesh29/Gender-and-Age-Detection/tree/master
+
+import cv2
+import math
+##import argparse
+
+def highlightFace(net, frame, conf_threshold=0.7):
+    frameOpencvDnn=frame.copy()
+    frameHeight=frameOpencvDnn.shape[0]
+    frameWidth=frameOpencvDnn.shape[1]
+    blob=cv2.dnn.blobFromImage(frameOpencvDnn, 1.0, (300, 300), [104, 117, 123], True, False)
+
+    net.setInput(blob)
+    detections=net.forward()
+    faceBoxes=[]
+    for i in range(detections.shape[2]):
+        confidence=detections[0,0,i,2]
+        if confidence>conf_threshold:
+            x1=int(detections[0,0,i,3]*frameWidth)
+            y1=int(detections[0,0,i,4]*frameHeight)
+            x2=int(detections[0,0,i,5]*frameWidth)
+            y2=int(detections[0,0,i,6]*frameHeight)
+            faceBoxes.append([x1,y1,x2,y2])
+            cv2.rectangle(frameOpencvDnn, (x1,y1), (x2,y2), (0,255,0), int(round(frameHeight/150)), 8)
+    return frameOpencvDnn,faceBoxes
+
+def detect_gender_age(image_path):
+    faceProto = test_path + "opencv_face_detector.pbtxt"
+    faceModel = test_path + "opencv_face_detector_uint8.pb"
+    ageProto = test_path + "age_deploy.prototxt"
+    ageModel = test_path + "age_net.caffemodel"
+    genderProto = test_path + "gender_deploy.prototxt"
+    genderModel = test_path + "gender_net.caffemodel"
+
+    MODEL_MEAN_VALUES=(78.4263377603, 87.7689143744, 114.895847746)
+    ageList = ['(0-2)', '(4-6)', '(8-12)', '(15-20)', '(25-32)', '(38-43)', '(48-53)', '(60-100)']
+    genderList = ['Male','Female']
+
+    faceNet = cv2.dnn.readNet(faceModel,faceProto)
+    ageNet = cv2.dnn.readNet(ageModel,ageProto)
+    genderNet = cv2.dnn.readNet(genderModel,genderProto)
+
+    video = cv2.VideoCapture(image_path)
+    padding = 20
+    while cv2.waitKey(1)<0:
+        hasFrame, frame = video.read()
+        if not hasFrame:
+            cv2.waitKey()
+            break
+
+        resultImg,faceBoxes=highlightFace(faceNet,frame)
+        if not faceBoxes:
+            #print("No face detected")
+            break
+        else:
+            for faceBox in faceBoxes:
+                face=frame[max(0,faceBox[1]-padding):
+                          min(faceBox[3]+padding,frame.shape[0]-1),max(0,faceBox[0]-padding)
+                          :min(faceBox[2]+padding, frame.shape[1]-1)]
+
+                blob=cv2.dnn.blobFromImage(face, 1.0, (227,227), MODEL_MEAN_VALUES, swapRB=False)
+                genderNet.setInput(blob)
+                genderPreds=genderNet.forward()
+                gender=genderList[genderPreds[0].argmax()]
+
+                ageNet.setInput(blob)
+                agePreds=ageNet.forward()
+                age=ageList[agePreds[0].argmax()]
+
+                return {
+                    "gender": gender,
+                    "age": age
+                }
+
+                #cv2.putText(resultImg, f'{gender}, {age}', (faceBox[0], faceBox[1]-10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,255), 2, cv2.LINE_AA)
+                #cv2.imshow("Detecting age and gender", resultImg)
 
 # Detect function
 # --------------------------------------------------------------------------
@@ -161,7 +242,6 @@ def detect(pretrained, source, sex_check = False):
     detect = []
     model = YOLO(pretrained)
     results = model(source, conf=CONFIDENCE_THRESHOLD, iou=IOU_THRESHOLD)
-    
     
     for result in results:
         file = os.path.basename(result.path)
@@ -212,6 +292,10 @@ def merge_detections(lst1, lst2):
 
         description = def_item.get("description")
         
+        gender_age = detect_gender_age(filename)
+        if gender_age is None:
+            gender_age = {}
+        
         merged_item = {
             "file": file,
             "path": path,
@@ -219,11 +303,12 @@ def merge_detections(lst1, lst2):
             "description": description,
             "detections": {
                 "count": count,
-                "items": result
+                "items": result,
+                "human_data": gender_age,
             }
         }
         merged_list.append(merged_item)
     return json.dumps(merged_list)
 
-print()
-print("final", merge_detections(default_detect, nsfw_detect))
+print("Results")
+print(merge_detections(default_detect, nsfw_detect))
