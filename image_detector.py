@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
-# NSFW Image detection and filtering
+# NSFW Image content detection
 # ------------------------------------------------------------------------------
 # author: Alessandro Gubitosi
-# date: 2025-02-05
+# date: 2025-02-07
 #
 # @see Fine tuning scripts: https://github.com/EraX-JS-Company/EraX-NSFW-V1.0
 # @source: https://huggingface.co/erax-ai/EraX-Anti-NSFW-V1.1?not-for-all-audiences=true
