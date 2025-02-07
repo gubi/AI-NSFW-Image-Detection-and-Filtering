@@ -22,27 +22,25 @@ import torch
 IOU_THRESHOLD        = 0.3
 CONFIDENCE_THRESHOLD = 0.1
 
-drive_prefix = "drive/MyDrive/Colab Notebooks/"
+yolo_pretrained_pt = "pretrains/yolo11m.pt"
+nsfw_pretrained_pt = "pretrains/erax_nsfw_yolo11m.pt"
+# nsfw_pretrained_pt = "erax_nsfw_yolo11n.pt"
+# nsfw_pretrained_pt = "erax_nsfw_yolo11s.pt"
+visionx_pretrained_pt = "pretrains/visionx.pt"
 
-yolo_pretrained_pt = drive_prefix + "pretrains/yolo11m.pt"
-nsfw_pretrained_pt = drive_prefix + "pretrains/erax_nsfw_yolo11m.pt"
-# nsfw_pretrained_pt = drive_prefix + "erax_nsfw_yolo11n.pt"
-# nsfw_pretrained_pt = drive_prefix + "erax_nsfw_yolo11s.pt"
-visionx_pretrained_pt = drive_prefix + "pretrains/visionx.pt"
-
-source_path = drive_prefix + "training_samples/selected"
-source_path_single_not_sex = drive_prefix + "training_samples/selected/1698797738754547.jpg"
+source_path = "training_samples/selected"
+source_path_single_not_sex = "training_samples/selected/1698797738754547.jpg"
 source_2_paths = [
-    drive_prefix + "training_samples/selected/1722985818194150.png",
-    drive_prefix + "training_samples/selected/1724897142625564.jpg"
+    "training_samples/selected/1722985818194150.png",
+    "training_samples/selected/1724897142625564.jpg"
 ]
 source_4_paths = [
-    drive_prefix + "training_samples/selected/1698797738754547.jpg",
-    drive_prefix + "training_samples/selected/1722985818194150.png",
-    drive_prefix + "training_samples/selected/1724579240484244.jpg",
-    drive_prefix + "training_samples/selected/1721751848855669.jpg"
+    "training_samples/selected/1698797738754547.jpg",
+    "training_samples/selected/1722985818194150.png",
+    "training_samples/selected/1724579240484244.jpg",
+    "training_samples/selected/1721751848855669.jpg"
 ]
-recognized_path = drive_prefix + "training_samples/nsfw_recognized/"
+recognized_path = "training_samples/nsfw_recognized/"
 
 
 
