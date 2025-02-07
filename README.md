@@ -9,7 +9,7 @@ Main<br>
 `$ pip install -r requirements.txt`
 
 Torch<br>
-`!pip install torch torchvision torchaudio --index-url https://download.pytorch.org/index.html`
+`pip install torch torchvision torchaudio`
 
 PyPI<br>
 `pip install pyvips-binary pyvips`<br>
