@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-# NSFW Image detection and filtering
+# NSFW Image filter
+# Apply a pixelation filter on images with adult contents
 # ------------------------------------------------------------------------------
 # author: Alessandro Gubitosi
 # date: 2025-02-05
