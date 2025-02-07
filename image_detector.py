@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+
+# NSFW Image detection and filtering
+# ------------------------------------------------------------------------------
+# author: Alessandro Gubitosi
+# date: 2025-02-05
+#
+# @see Fine tuning scripts: https://github.com/EraX-JS-Company/EraX-NSFW-V1.0
+# @source: https://huggingface.co/erax-ai/EraX-Anti-NSFW-V1.1?not-for-all-audiences=true
+
 import json
 import numpy as np
 import os
