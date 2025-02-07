@@ -8,13 +8,6 @@ Detect image adult content and apply censorship
 Main<br>
 `$ pip install -r requirements.txt`
 
-Torch<br>
-`pip install torch torchvision torchaudio`
-
-PyPI<br>
-`pip install pyvips-binary pyvips`<br>
-@see also https://pypi.org/project/pyvips/
-
 &nbsp;
 
 ## Execution
