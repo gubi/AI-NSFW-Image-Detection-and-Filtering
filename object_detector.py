@@ -1,120 +1,219 @@
-from ultralytics import YOLO
-from flask import request, Flask, jsonify
-from waitress import serve
+import json
+import numpy as np
+import os
+import re
+import supervision as sv
 from PIL import Image
-import logging
+from ultralytics import YOLO
+import moondream as md
+import torch
 
+# Common variables
+# --------------------------------------------------------------------------
 IOU_THRESHOLD        = 0.3
-CONFIDENCE_THRESHOLD = 0.2
+CONFIDENCE_THRESHOLD = 0.1
+# Key Name: cosmic-bear-616
+MOONDREAM_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXlfaWQiOiJkZDkyM2U2Mi1iZmE4LTRhMzUtYmFmYS02MjM4NmQ0ZTAwNTIiLCJpYXQiOjE3Mzg5MDA3MTF9.TzMA1xBoGpUthKdU8tQuIrfOpAvOR_SMIB2Sb_oUVcs"
 
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s %(message)s')
+drive_prefix = "drive/MyDrive/Colab Notebooks/"
 
-app = Flask(__name__)
+yolo_pretrained_pt = drive_prefix + "pretrains/yolo11m.pt"
+nsfw_pretrained_pt = drive_prefix + "pretrains/erax_nsfw_yolo11m.pt"
+# nsfw_pretrained_pt = drive_prefix + "erax_nsfw_yolo11n.pt"
+# nsfw_pretrained_pt = drive_prefix + "erax_nsfw_yolo11s.pt"
+visionx_pretrained_pt = drive_prefix + "pretrains/visionx.pt"
 
-@app.route("/")
-def root():
-    """
-    Site main page handler function.
-    :return: Content of index.html file
-    """
-    with open("index.html") as file:
-        return file.read()
+source_path = drive_prefix + "training_samples/selected"
+source_path_single_not_sex = drive_prefix + "training_samples/selected/1698797738754547.jpg"
+source_2_paths = [
+    drive_prefix + "training_samples/selected/1722985818194150.png",
+    drive_prefix + "training_samples/selected/1724897142625564.jpg"
+]
+source_4_paths = [
+    drive_prefix + "training_samples/selected/1698797738754547.jpg",
+    drive_prefix + "training_samples/selected/1722985818194150.png",
+    drive_prefix + "training_samples/selected/1724579240484244.jpg",
+    drive_prefix + "training_samples/selected/1721751848855669.jpg"
+]
+recognized_path = drive_prefix + "training_samples/nsfw_recognized/"
 
+# NSFW image filtering script
+# --------------------------------------------------------------------------
+def filter_nsfw(pretrained, source):
+    model = YOLO(pretrained)
+    results = model(source, conf=CONFIDENCE_THRESHOLD, iou=IOU_THRESHOLD)
+    json_sink = sv.JSONSink(recognized_path + "report.json")
 
-@app.route("/detect", methods=["POST"])
-def detect():
-    """
-    Handler of /detect POST endpoint
-    Receives uploaded file with a name "image_file", passes it
-    through YOLOv11 object detection network and returns and array
-    of bounding boxes.
-    :return: a JSON array of objects bounding boxes in format [[x1,y1,x2,y2,object_type,probability],..]
-    """
-    buf = request.files["image_file"]
-    boxes = detect_objects_on_image(buf.stream)
-    return jsonify(boxes)
+    # Save JSON
+    with json_sink as sink:
+        for result in results:
+            filename = os.path.basename(result.path)
+            recognized_filename = recognized_path + filename
+            annotated_image = result.orig_img.copy()
+            detected = []
 
+            h, w = annotated_image.shape[:2]
+            anchor = h if h > w else w
 
-def detect_objects_on_image(buf):
-    """
-    Function receives an image,
-    passes it through YOLOv11 neural network
-    and returns an array of detected objects
-    and their bounding boxes
-    :param buf: Input image file stream
-    :return: Array of bounding boxes in format [[x1,y1,x2,y2,object_type,probability],..]
-    """
+            detections = sv.Detections.from_ultralytics(result)
 
-    # Load a model
-    # model = YOLO("./yolo11n.yaml")  # build a new model from YAML
-    # model = YOLO("./yolo11n.pt")  # load a pretrained model (recommended for training)
-    # model = YOLO("yolo11n.yaml").load("yolo11n.pt")  # build from YAML and transfer weights
+            # Draw labels
+            # label_annotator = sv.LabelAnnotator(
+            #     text_color = sv.Color.BLACK,
+            #     text_position = sv.Position.CENTER,
+            #     text_scale = anchor/1700
+            # )
 
-    # model = YOLO("best.pt")
-    # model = YOLO("yolo11n.pt")
-    # model = YOLO("./yolo11n.yaml").load("erax_nsfw_yolo11n.pt")
-    # model = YOLO("./yolo11n.yaml").load("yolo11n.pt").load("erax_nsfw_yolo11n.pt")
-    # model = YOLO("SexyCocoModel/yolov3.data-00000-of-00001")
+            # Pixelate image
+            pixelate_annotator = sv.PixelateAnnotator(pixel_size = anchor/50)
+            annotated_image = pixelate_annotator.annotate(
+                scene = annotated_image.copy(),
+                detections = detections
+            )
 
-    # See https://huggingface.co/erax-ai/EraX-NSFW-V1.0/blob/main/erax_nsfw_yolo11n.pt
-    model = YOLO("pretrains/yolo11m.pt")
-    model = YOLO("pretrains/erax_nsfw_yolo11m.pt")
+            # Add labels to image
+            # annotated_image = label_annotator.annotate(
+            #     annotated_image,
+            #     detections = detections
+            # )
 
-    # model1 = YOLO("pretrains/yolo11m.pt")  # load a pretrained model (recommended for training)
-    # model2 = YOLO("datasets/yolo11-seg.yaml")  # build a new model from YAML
-    # # model1 = YOLO("pretrains/yolo11m-seg.pt")  # load a pretrained model (recommended for training)
-    # # model2 = YOLO("pretrains/erax_nsfw_yolo11m.pt") #.load("pretrains/yolo11m.pt")  # load a pretrained model (recommended for training)
-    # # model = YOLO("datasets/yolo11-seg.yaml") #.load("yolo11.pt")  # build from YAML and transfer weights
-    #
-    # # See https://github.com/ultralytics/ultralytics/issues/5882#issuecomment-2188576650
-    # # Extract class names from the dictionaries
-    # classes1 = list(model1.names.values())
-    # classes2 = list(model2.names.values())
-    #
-    # # Combine class labels
-    # combined_classes = classes1 + [cls for cls in classes2 if cls not in classes1]
-    #
-    # # Initialize a new YOLOv8 model with the architecture of one of the pretrained models
-    # combined_model = YOLO('pretrains/yolo11m.pt')
-    # combined_model.model.nc = len(combined_classes)
-    # combined_model.model.names = {i: name for i, name in enumerate(combined_classes)}
-    #
-    # # Transfer weights
-    # weights1 = model1.model.state_dict()
-    # weights2 = model2.model.state_dict()
-    # combined_weights = combined_model.model.state_dict()
-    #
-    # for key in weights1:
-    #     if key in combined_weights:
-    #         combined_weights[key] = weights1[key]
-    # for key in weights2:
-    #     if key in combined_weights:
-    #         combined_weights[key] = weights2[key]
-    #
-    # combined_model.model.load_state_dict(combined_weights, strict=False)
-    #
-    # # Save the combined model
-    # # torch.save(combined_model.model.state_dict(), 'yolov8_combined_model.pt')
-    #
-    # # Perform inference with the combined model
-    # # results = combined_model(source="video.mp4", show=True, conf=0.1, save=True)
-    # # print(results)
-    #
-    # results = combined_model.predict(Image.open(buf), conf=CONFIDENCE_THRESHOLD, iou=IOU_THRESHOLD)
-    results = model.train(data="coco8.yaml", epochs=2)
-    # result = results[0]
-    print(results)
-    # output = []
-    # for box in result.boxes:
-    #     x1, y1, x2, y2 = [
-    #         round(x) for x in box.xyxy[0].tolist()
-    #     ]
-    #     class_id = box.cls[0].item()
-    #     prob = round(box.conf[0].item(), 2)
-    #     output.append([
-    #         x1, y1, x2, y2, result.names[class_id], prob
-    #     ])
-    # # print(jsonify(result))
-    # return output
+            for found in detections.data.values():
+                detected = str(found)
+                detected_count = len(found)
 
-serve(app, host='127.0.0.1', port=3000)
+            sink.append(
+                detections,
+                custom_data = {
+                    "filename": filename,
+                    "detections": {
+                        "count": detected_count,
+                        "items": detected
+                    }
+                }
+            )
+            pilimg = sv.cv2_to_pillow(annotated_image)
+            pilimg.save(recognized_filename)
+
+filter_nsfw(nsfw_pretrained_pt, source_path)   
+
+# Get image description function
+# --------------------------------------------------------------------------
+moondream_model = md.vl(api_key=MOONDREAM_API_KEY)
+moondream_query = """
+Give me a brief description of this image, and a detailed comma-separated list of unique objects visible in this image, no general terms.
+Output JSON object with keys:
+- 'subject': (string) An objective description of the subject in the image in 50 characters
+- 'short': (string) a short description for image label (max 25 words)
+- 'long': (string) a long description, max 250 characters
+- 'tags': (array) a list of univocal and not repeated 6 tags
+"""
+
+# Generate an AI image description
+## @params <string>                 img                   The image to process
+def get_image_description(img):
+    image = Image.open(img)
+    #encoded_image = moondream_model.encode_image(image)
+    description = {}
+    
+    try:
+        answer = moondream_model.query(image, moondream_query)["answer"]
+        description = json.loads(answer)
+    except json.JSONDecodeError as e:
+        print(f"Error decoding JSON: {e}, response: {answer}")
+        description = {  # provide default values if JSON decode fails
+            "subject": None,
+            "short": None,
+            "long": None,
+            "tags": []
+        }
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        description = {  # provide default values if any other error occurs
+            "subject": None,
+            "short": None,
+            "long": None,
+            "tags": []
+        }
+    
+    description = {
+        "subject": description.get("subject"),
+        "short": description.get("short"),
+        "long": description.get("long"),
+        "tags": list(set(description.get("tags")))
+    }
+    return description
+
+# Detect function
+# --------------------------------------------------------------------------
+# Perform a detection of a selected pretrained model on given source
+# The source can be both a string or array
+def detect(pretrained, source, sex_check = False):
+    detect = []
+    model = YOLO(pretrained)
+    results = model(source, conf=CONFIDENCE_THRESHOLD, iou=IOU_THRESHOLD)
+    
+    
+    for result in results:
+        file = os.path.basename(result.path)
+        recognized_filename = recognized_path + file
+        annotated_image = result.orig_img.copy()
+        
+        detections = sv.Detections.from_ultralytics(result)
+        for found in detections.data.values():
+            detected = found.tolist()
+            detected_count = len(found)
+        
+        if sex_check and detected_count > 0:
+            has_sex = True
+        else:
+            has_sex = False
+        
+        custom_data = {
+            "file": file,
+            "path": recognized_path,
+            "has_sex": has_sex,
+            "description": get_image_description(result.path),
+            "detections": {
+                "count": detected_count,
+                "items": detected
+            }
+        }
+        detect.append(custom_data)
+    return detect
+
+# Merge detections function
+# --------------------------------------------------------------------------
+subject_path = source_2_paths
+
+default_detect = detect(yolo_pretrained_pt, subject_path)
+nsfw_detect = detect(nsfw_pretrained_pt, subject_path, True)
+
+def merge_detections(lst1, lst2):
+    merged_list = []  # Create a list to store merged results
+    for def_item, nsfw_item in zip(lst1, lst2):  # Assuming lst1 and lst2 have the same length and corresponding items
+        # Use square bracket notation to access dictionary keys
+        file = def_item.get("file")
+        path = def_item.get("path")
+        
+        has_sex = def_item.get("has_sex") or nsfw_item.get("has_sex")
+        count = def_item.get("detections", {}).get("count", 0) + nsfw_item.get("detections", {}).get("count", 0)
+        items = def_item.get("detections", {}).get("items", []) + nsfw_item.get("detections", {}).get("items", [])
+        result = dict((i, items.count(i)) for i in items)
+
+        description = def_item.get("description")
+        
+        merged_item = {
+            "file": file,
+            "path": path,
+            "has_sex": has_sex,
+            "description": description,
+            "detections": {
+                "count": count,
+                "items": result
+            }
+        }
+        merged_list.append(merged_item)
+    return json.dumps(merged_list)
+
+print()
+print("final", merge_detections(default_detect, nsfw_detect))
