@@ -1,7 +1,7 @@
-# NSFW Image Detection and Filtering
+# AI NSFW Image Detection and Filtering
 ![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://github.com/gubi/NSFW-Image-Detection-and-Filtering/blob/master/training_samples/nsfw_recognized/1724897142625564.jpg)
 
-Detect image adult content and apply censorship 
+Detect image adult content and apply censorship using AI
 
 &nbsp;
 &nbsp;
